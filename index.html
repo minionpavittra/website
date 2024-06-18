@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width intitial-scale=1.0">
+    <title>WELCOME TO TAFE COLLEGE</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+        <div class="logo">
+            <img src=" tafe logo.jpg" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a class="popup-youtube" href="https://www.youtube.com/watch?v=x4uv7UuGfyY">About Us</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a id="home-btn" href="#">Login/Register</a></li>
+        </ul>              
+          
+        </div>
+    </header>
+
+    
+      <div class="wrap">
+        <div id="popup-container" style="display:none;">
+          <form class="login">
+            <div class="toggle-bar">
+              <div class="toggle-login active">
+                <span>Login</span>
+              </div>
+              <div class="toggle-register">
+                <span>Register</span>
+              </div>
+            </div>
+            <div class="login-body">
+              <div class="input-section">
+                <i class="fas fa-user"></i>
+                <input class="user-input" type="text" placeholder="Nama Pengguna">
+              </div>
+              <div class="input-section">
+                <i class="fas fa-lock"></i>
+                <input class="user-input" type="password" placeholder="Kata Laluan">
+              </div>
+              <p id="forgot-password">Forgot your password?</p>
+              <button class="btn" id="btn-login">Login</button>
+            </div>
+            <div class="register-body" style="display:none;">
+              <div class="input-section">
+                <i class="fas fa-user-circle"></i>
+                <input class="user-input" type="text" placeholder="Username"> <!-- New field for Nama Pengguna -->
+            </div>
+              <div class="input-section">
+                <i class="fas fa-lock"></i>
+                <input class="user-input" type="password" placeholder="Password"> <!-- Changed placeholder to "Kata Laluan" -->
+            </div>
+              <div class="input-section">
+                  <i class="fas fa-user"></i>
+                  <input class="user-input" type="text" placeholder="Nama Penuh"> <!-- Changed placeholder to "Name" -->
+              </div>
+              <div class="input-section">
+                  <i class="fas fa-envelope"></i>
+                  <input class="user-input" type="email" placeholder="Email"> <!-- Placeholder "Email" remains the same -->
+              </div>
+              <div class="input-section">
+                  <i class="fas fa-id-card"></i>
+                  <input class="user-input" type="text" placeholder="Kad Pengenalan"> <!-- New field for Kad Pengenalan -->
+              </div>
+              <div class="input-section">
+                  <i class="fas fa-home"></i>
+                  <input class="user-input" type="text" placeholder="Alamat"> <!-- New field for Alamat -->
+              </div>
+              <div class="input-section">
+                  <i class="fas fa-book"></i>
+                  <input class="user-input" type="text" placeholder="Kursus"> <!-- New field for Kursus -->
+              </div>
+              <div class="input-section">
+                  <i class="fas fa-phone"></i>
+                  <input class="user-input" type="text" placeholder="No. Telefon"> <!-- New field for No. Telefon -->
+              </div>
+              <p id="registered">Sudah Berdaftar?</p>
+              <button class="btn btn-action" id="btn-register">Daftar</button>
+          </div>        
+          </form>
+          <button id="close-btn">Close</button>  
+        </div>
+      </div>
+    
+
+    <script src="https://ajax.goolepis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script> 
+        $(function() {
+        $('.popup-youtube, .popup-vimeo').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+            });
+            });
+    </script>
+    <script> 
+        $('.toggle-register').click(function(){
+        $(this).addClass('active');
+        $('.toggle-login').removeClass('active');
+        $('.login-body').slideUp("slow");
+        $('.register-body').delay(625).slideDown("slow");
+        });
+
+        $('.toggle-login').click(function(){
+        $(this).addClass('active');
+        $('.toggle-register').removeClass('active');
+        $('.register-body').slideUp("slow");
+        $('.login-body').delay(625).slideDown("slow");
+        });
+
+        $('#registered').click(function(){
+        $('.toggle-login').click();
+        });
+
+        $('#btn-login, #btn-register').click(function(e){
+        e.preventDefault();
+        });
+
+        $(document).ready(function() {
+    // ... existing code ...
+
+    // Show the popup when the Home link is clicked
+    $('#home-btn').click(function(e) {
+        e.preventDefault();
+        $('#popup-container').show();
+    });
+
+    // Hide the popup when the close button is clicked
+    $('#close-btn').click(function() {
+        $('#popup-container').hide();
+    });
+});
+
+    </script>
+</body>
+</html>

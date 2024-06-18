@@ -1,0 +1,16 @@
+I want 3 buttons 
+1 button Login : email and password, signup, 
+
+2 buttons registration : full name, ic, age, address, email, course ( SKM LV 2,LV 3 ,and DKM LV 4, ), departure( IT ,automotive) , parents name, parent ic
+
+3 buttons logout 
+
+I want help remove logo 
+
+I want background keep video 
+
+I want Change about us video 
+
+I want contacts us page 
+
+3 buttons in middle
